@@ -157,7 +157,7 @@ Feature: Smoke Module
       |DP:LOGIN.URL| DP:LOGIN.USERNAME | DP:LOGIN.PASSWORD |
 
   @EVS-629
-  Scenario Outline: EVS-629:As a user, I should see dependent audit
+  Scenario Outline: EVS-629:As a user, I should see dependent audit information
     Given I should open the given <url>
     And I Enter <UserName> and <Password>
     And I click Login button Consova
