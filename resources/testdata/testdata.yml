@@ -2,7 +2,7 @@ LOGIN:
   URL: "https://dev-iverifypro.consova.com/"
   USERNAME: "smohanapriya@inlogic.in"
   PASSWORD: "Priya@08"
-  INVALIDPASSWORD: "Invalid"
+  INVALIDPASSWORD: "Invalidpassword"
   CONSOVAID: "136360"
   CLIENTID: "13682402W"
   FIRSTNAME: "Jannell"
