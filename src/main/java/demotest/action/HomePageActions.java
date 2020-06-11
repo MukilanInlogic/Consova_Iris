@@ -6,6 +6,8 @@ import commonpage.util.TestdataConstants;
 import demotest.Repository.HomePageUI;
 import javafx.scene.control.Tab;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,6 +103,25 @@ public class HomePageActions extends HomePageUI {
         return isVerified;
     }
 
+    public boolean clickForgetUsername() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (linkForgetUsername.isDisplayed()){
+            Element.click(driver,linkForgetUsername);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean verifyForgetUsernameMsg() {
+        boolean isVerified = false;
+        Sync.Delay(5000);
+        if (msgForgetUsername.isDisplayed()) {
+            isVerified = true;
+        }
+        return isVerified;
+    }
+
     public boolean verifyInvalidLoginMessage() {
         boolean isVerified = false;
         Sync.Delay(10000);
@@ -188,7 +209,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean EnterEmailAddress(String strUsername) {
         boolean isEntered = false;
-        Sync.Delay(5000);
+        Sync.Delay(7000);
         if (txtBoxEmailAddress.isDisplayed()) {
             Textbox.enterValue(driver,txtBoxEmailAddress,strUsername);
             isEntered = true;
@@ -226,7 +247,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean clickOkButton() {
         boolean isClicked = false;
-        Sync.Delay(3000);
+        Sync.Delay(5000);
         if (btnOk.isDisplayed()){
             Element.click(driver,btnOk);
             isClicked = true;
@@ -281,6 +302,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean EnterConsovaid(String strUsername) {
         boolean isEntered = false;
+        Sync.Delay(5000);
         if (txtBoxSearch.isDisplayed()) {
             txtBoxSearch.clear();
             Textbox.enterValue(driver,txtBoxSearch,strUsername);
@@ -301,7 +323,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean verifyFullNameInAccount() {
         boolean isVerified = false;
-        Sync.Delay(3000);
+        Sync.Delay(7000);
         if (FullNameInAccount.isDisplayed()) {
             isVerified = true;
         }
@@ -337,7 +359,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean verifyConsovaPINInAccount(String consovaID) {
         boolean isVerified = false;
-        Sync.Delay(3000);
+        Sync.Delay(20000);
         if(lblConsovaPINInAccount.isDisplayed()) {
             if (consovaPINInAccount.get(0).getText().equals(consovaID)) {
                 isVerified = true;
@@ -453,7 +475,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean EnterNewPassword(String password) {
         boolean isEntered = false;
-        Sync.Delay(3000);
+        Sync.Delay(7000);
         if (txtboxNewPassword.isDisplayed()) {
             Textbox.enterValue(driver,txtboxNewPassword,password);
             isEntered = true;
@@ -815,9 +837,11 @@ public class HomePageActions extends HomePageUI {
     public boolean clickActivationEmail() {
         boolean isClicked = false;
         Sync.Delay(30000);
-        if (otersTabInOutlook.isDisplayed()) {
+        if (activationEmail.isDisplayed()) {
+            JavascriptExecutor js=(JavascriptExecutor)driver;
+            js.executeScript("arguments[0].click();",activationEmail);
             //Element.click(driver,otersTabInOutlook);
-            Element.click(driver,activationEmail);
+            //Element.click(driver,activationEmail);
             isClicked = true;
         }
         return isClicked;
@@ -825,7 +849,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean clickActivationLink() {
         boolean isClicked = false;
-        Sync.Delay(5000);
+        Sync.Delay(10000);
         if (activationLink.isEnabled()) {
             Element.click(driver,activationLink);
             isClicked = true;
@@ -833,7 +857,258 @@ public class HomePageActions extends HomePageUI {
         return isClicked;
     }
 
+    public boolean EnterFirstName(String FirstName) {
+        boolean isEntered = false;
+        Sync.Delay(5000);
+        if (txtBoxFirstName.isDisplayed()) {
+            Textbox.enterValue(driver,txtBoxFirstName,FirstName);
+            isEntered = true;
+        }
+        return isEntered;
+    }
 
+    public boolean EnterLastName(String LastName) {
+        boolean isEntered = false;
+        Sync.Delay(5000);
+        if (txtBoxLastName.isDisplayed()) {
+            Textbox.enterValue(driver,txtBoxLastName,LastName);
+            isEntered = true;
+        }
+        return isEntered;
+    }
+
+    public boolean EnterEmail(String Email) {
+        boolean isEntered = false;
+        Sync.Delay(5000);
+        if (txtBoxEmail.isDisplayed()) {
+            Textbox.enterValue(driver,txtBoxEmail,Email);
+            isEntered = true;
+        }
+        return isEntered;
+    }
+
+    public boolean manageIconInMenubar() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (manageUserIcon.isEnabled()) {
+            Element.click(driver,manageUserIcon);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean addUserButton() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (addUserButton.isEnabled()) {
+            Element.click(driver,addUserButton);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean clickRegisterButton() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (registerUserButton.isEnabled()) {
+            JavascriptExecutor js=(JavascriptExecutor)driver;
+            js.executeScript("arguments[0].click();",registerUserButton);
+            //Element.click(driver,registerUserButton);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean clickRolesDropdown() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (dropdownRoles.isEnabled()) {
+            Element.click(driver,dropdownRoles);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean selectRolesInDropdown() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (listRoles.size()!=0) {
+            Element.click(driver,listRoles.get(1));
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean clickClientSubnameDropdown() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (dropdownSubClient.isEnabled()) {
+            Element.click(driver,dropdownSubClient);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean selectClientCheckbox() {
+        boolean isClicked = false;
+        Sync.Delay(7000);
+        if (listOfCheckboxes.size()!=0) {
+            Checkbox.check(driver,listOfCheckboxes.get(0));
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean verifyReportsMenu() {
+        boolean isVerified = false;
+        Sync.Delay(3000);
+        if (reportIconWithName.isDisplayed()) {
+            Element.click(driver,reportIconWithName);
+            if(standardReportIcon.isDisplayed()){
+                if(customReportIcon.isDisplayed()){
+                    isVerified=true;
+                }
+            }
+        }
+        return isVerified;
+    }
+
+    public boolean verifyMenuWithNames() {
+        boolean isVerified = false;
+        Sync.Delay(3000);
+        if (dashboardIconWithName.isDisplayed()) {
+            if (adminTicketIconWithName.isDisplayed()) {
+                if (manageUserIconWithName.isDisplayed()) {
+                    if (privacyPolicyIconWithName.isDisplayed()) {
+                        if (logoutIconWithName.isDisplayed()) {
+                            isVerified=true;
+                        }
+                    }
+                }
+            }
+        }
+        return isVerified;
+    }
+
+    public boolean verifyMenuIcons() {
+        boolean isVerified = false;
+        Sync.Delay(3000);
+        if (dashboardIcon.isDisplayed()) {
+            if (adminTicketIcon.isDisplayed()) {
+                if (reportIcon.isDisplayed()) {
+                    if (manageUserIcon.isDisplayed()) {
+                        if (privacyPolicyIcon.isDisplayed()) {
+                            if (btnLogout.isDisplayed()) {
+                                isVerified=true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return isVerified;
+    }
+
+    public boolean clickCollapseIconInMenubar() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (collapseIconInMenubar.isDisplayed()) {
+            Element.click(driver,collapseIconInMenubar);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean morethan5MBFile() {
+        boolean isEntered = false;
+        Sync.Delay(7000);
+        browsePath.sendKeys("C:\\Users\\amukilan\\Desktop\\Consova-Project_IVAC\\resources\\UploadFilesAndImages\\"+Highmbfilename);
+        isEntered = true;
+        return isEntered;
+    }
+
+    public boolean uploadErrorMessageVerify(){
+        boolean isVerified=false;
+        Sync.Delay(5000);
+        if(uploadErrorMessageVerify.isDisplayed()){
+            isVerified=true;
+        }
+        return isVerified;
+    }
+
+    public boolean browsePath() {
+        boolean isEntered = false;
+        Sync.Delay(7000);
+        browsePath.sendKeys("C:\\Users\\amukilan\\Desktop\\Consova-Project_IVAC\\resources\\UploadFilesAndImages\\"+filename);
+        isEntered = true;
+        return isEntered;
+    }
+
+    public boolean uploadIcon() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (uploadIcon.isDisplayed()){
+            Element.click(driver,uploadIcon);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean uploadDocumentIcon() {
+        boolean isClicked = false;
+        Sync.Delay(5000);
+        if (uploadDocumentIcon.isDisplayed()){
+            Element.click(driver,uploadDocumentIcon);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean uploadVerificationMsg(){
+        boolean isVerified=false;
+        Sync.Delay(5000);
+        if(uploadVerificationMsg.isDisplayed()){
+            isVerified=true;
+        }
+        return isVerified;
+    }
+
+    public boolean clickSearchIcon() {
+        boolean isClicked = false;
+        Sync.Delay(2000);
+        if (searchIcon.isDisplayed()) {
+            Element.click(driver,searchIcon);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean clickViewAccount() {
+        boolean isClicked = false;
+        Sync.Delay(2000);
+        if (viewAccountLink.isDisplayed()) {
+            Element.click(driver,viewAccountLink);
+            isClicked = true;
+        }
+        return isClicked;
+    }
+
+    public boolean verifyHeadersInSearch(){
+        boolean isVerified=false;
+        Sync.Delay(5000);
+        if(consovaPINInSearch.isDisplayed()){
+            if(employeeIdInSearch.isDisplayed()){
+                if(ssnInSearch.isDisplayed()){
+                    if(dOBInSearch.isDisplayed()){
+                        if(employeeNameInSearch.isDisplayed()){
+                            isVerified=true;
+                        }
+                    }
+                }
+            }
+        }
+        return isVerified;
+    }
 
 
 }

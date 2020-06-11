@@ -10,10 +10,10 @@ Feature: Smoke Module
     And I click Login button Consova
     And I should verify the dashboard in homepage screen after successful login
     And I should logout of the application
-#    And I Enter <UserName> and <InvalidPassword>
-#    And I click Login button Consova
-#    And I should I should verify the error popup message
-#    And I should accept the error popup message
+    And I Enter <UserName> and <InvalidPassword>
+    And I click Login button Consova
+    And I should I should verify the error popup message
+    And I should accept the error popup message
     And I should verify the link to privacy policy
     And I should click the privacy policy link
     And I should navigate to newly opened tab
@@ -29,6 +29,9 @@ Feature: Smoke Module
     And I should click on send password email from the popup
     And I should verify the password reset sent notification
     And I should click on OK button
+    And I should click the forget username link
+    And I should verify the popup message displayed
+    And I should accept the error popup message
 
     Examples:
       |url| UserName          | Password          |InvalidPassword|email|
@@ -57,12 +60,20 @@ Feature: Smoke Module
     And I click Login button Consova
     And I should verify the search bar
     And I should enter consovaid <consovaid> in search bar
-    And I should verify the <consovaid> present in the populated dropdown
+    And I should click on Search icon to search in a new tab
+    And I should navigate to newly opened tab
+    And I should verify all the headers in the search window
+    And I should click on view account to navigate into account screen
+    And I should verify full name in account screen
+    And I should verify SSN, clientID, DOB, address, city, state, zipcode, homephone, workphone, email and preferred email
+    And I should close the newly opened tab
+    And I should verify the search bar
+    And I should enter consovaid <consovaid> in search bar
     And I should verify the <firstname> present in the populated dropdown
     And I should verify the <lastname> present in the populated dropdown
     And I should verify the <clientId> present in the populated dropdown
     And I should verify the <ssn> present in the populated dropdown
-    And I should verify the dropdown list populated with five suggestions
+#    And I should verify the dropdown list populated with five suggestions
     And I should select the first suggestion in filtered list
     And I should navigate to newly opened tab
     And I should verify full name in account screen
@@ -298,7 +309,68 @@ Feature: Smoke Module
     And I click Login button Consova
     And I should verify the dashboard in homepage screen after successful login
     And I should logout of the application
+    And I should close the newly opened tab
 
     Examples:
       |email|password|UserName          | Password          |
       | DP:LOGIN.EMAILID | DP:LOGIN.EMAILPASSWORD |DP:LOGIN.USERNAME | DP:LOGIN.PASSWORD |
+
+  @EVS-631
+  Scenario Outline: EVS-631-As a user, I should have ability to create users for sub clients
+    Given I should open the given <url>
+    And I Enter <UserName> and <Password>
+    And I click Login button Consova
+    And I should click on manage users icon
+    And I should click on add user button
+    And I should enter firstname <FirstName> in popup dialog box
+    And I should enter lastname <LastName> in popup dialog box
+    And I should enter email <email> in popup dialog box
+    And I should click on roles dropdown
+    And I should select user role from dropdown displayed
+    And I should click on client's subname dropdown
+    And I should select client subname from dropdown
+    And I should click on register user button
+    And I should click on OK button
+    And I should logout of the application
+
+    Examples:
+      |url| UserName          | Password          |FirstName|LastName|email|
+      |DP:LOGIN.URL| DP:LOGIN.USERNAME | DP:LOGIN.PASSWORD |DP:LOGIN.FIRSTNAME|DP:LOGIN.LASTNAME|DP:LOGIN.EMAIL|
+
+  @EVS-798
+  Scenario Outline: EVS-798-As a user, I should see navigation bar on left side
+    Given I should open the given <url>
+    And I Enter <UserName> and <Password>
+    And I click Login button Consova
+    And I should click the sidebar collapse icon
+    And I should verify icons with names in menubar
+    And I should verify reports menu in menubar
+    And I should click the sidebar collapse icon
+    And I should verify icons in menubar
+    And I should logout of the application
+
+    Examples:
+      |url| UserName          | Password          |
+      |DP:LOGIN.URL| DP:LOGIN.USERNAME | DP:LOGIN.PASSWORD |
+
+  @EVS-969
+  Scenario Outline: EVS-969-As a user, I should be able to upload documents on employee behalf
+    Given I should open the given <url>
+    And I Enter <UserName> and <Password>
+    And I click Login button Consova
+    And I should enter consovaid <consovaid> in search bar
+    And I should select the first suggestion in filtered list
+    And I should navigate to newly opened tab
+    And I should click on upload document icon
+    And I should select the more than five MB file for upload
+    And I should verify the warning message for file size
+    And I should select desired document by Browse icon
+    And I should upload the document
+    And I should verify the successful upload message
+    And I should click on OK button
+    And I should close the newly opened tab
+    And I should logout of the application
+
+    Examples:
+      |url| UserName          | Password          |consovaid|
+      |DP:LOGIN.URL| DP:LOGIN.USERNAME | DP:LOGIN.PASSWORD |DP:LOGIN.CONSOVAID|

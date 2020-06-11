@@ -6,7 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import demotest.util.ActionContainer;
-import org.junit.Test;
+import junit.framework.Test;
 
 import java.util.List;
 
@@ -408,5 +408,130 @@ public class HomePageSteps {
     @And("^I should click on save password in popup$")
     public void iShouldClickOnSavePasswordInPopup() {
         assertTrue(actionContainer.homePageActions.clickBtnSavePasswordInPopup());
+    }
+
+    @And("^I should click on manage users icon$")
+    public void iShouldClickOnManageUsersIcon() {
+        assertTrue(actionContainer.homePageActions.manageIconInMenubar());
+    }
+
+    @And("^I should click on add user button$")
+    public void iShouldClickOnAddUserButton() {
+        assertTrue(actionContainer.homePageActions.addUserButton());
+    }
+
+    @And("^I should enter firstname (.*) in popup dialog box$")
+    public void iShouldEnterFirstnameFirstNameInPopupDialogBox(String firstName) {
+        assertTrue(actionContainer.homePageActions.EnterFirstName(Testdata.getValue(firstName)));
+    }
+
+    @And("^I should enter lastname (.*) in popup dialog box$")
+    public void iShouldEnterLastnameLastNameInPopupDialogBox(String lastName) {
+        assertTrue(actionContainer.homePageActions.EnterLastName(Testdata.getValue(lastName)));
+    }
+
+    @And("^I should enter email (.*) in popup dialog box$")
+    public void iShouldEnterEmailEmailInPopupDialogBox(String email) {
+        assertTrue(actionContainer.homePageActions.EnterEmail(Testdata.getValue(email)));
+    }
+
+    @And("^I should click on roles dropdown$")
+    public void iShouldClickOnRolesDropdown() {
+        assertTrue(actionContainer.homePageActions.clickRolesDropdown());
+    }
+
+    @And("^I should select user role from dropdown displayed$")
+    public void iShouldSelectUserRoleFromDropdownDisplayed() {
+        assertTrue(actionContainer.homePageActions.selectRolesInDropdown());
+    }
+
+    @And("^I should click on client's subname dropdown$")
+    public void iShouldClickOnClientSSubnameDropdown() {
+        assertTrue(actionContainer.homePageActions.clickClientSubnameDropdown());
+    }
+
+    @And("^I should select client subname from dropdown$")
+    public void iShouldSelectClientSubnameFromDropdown() {
+        assertTrue(actionContainer.homePageActions.selectClientCheckbox());
+    }
+
+    @And("^I should click on register user button$")
+    public void iShouldClickOnRegisterUserButton() {
+        assertTrue(actionContainer.homePageActions.clickRegisterButton());
+    }
+
+    @And("^I should click the forget username link$")
+    public void iShouldClickTheForgetUsernameLink() {
+        assertTrue(actionContainer.homePageActions.clickForgetUsername());
+    }
+
+    @And("^I should verify the popup message displayed$")
+    public void iShouldVerifyThePopupMessageDisplayed() {
+        assertTrue(actionContainer.homePageActions.verifyForgetUsernameMsg());
+    }
+
+    @And("^I should click the sidebar collapse icon$")
+    public void iShouldClickTheSidebarCollapseIcon() {
+        assertTrue(actionContainer.homePageActions.clickCollapseIconInMenubar());
+    }
+
+    @And("^I should verify icons with names in menubar$")
+    public void iShouldVerifyIconsWithNamesInMenubar() {
+        assertTrue(actionContainer.homePageActions.verifyMenuWithNames());
+    }
+
+    @And("^I should verify reports menu in menubar$")
+    public void iShouldVerifyReportsMenuInMenubar() {
+        assertTrue(actionContainer.homePageActions.verifyReportsMenu());
+    }
+
+    @And("^I should verify icons in menubar$")
+    public void iShouldVerifyIconsInMenubar() {
+        assertTrue(actionContainer.homePageActions.verifyMenuIcons());
+    }
+
+    @And("^I should click on upload document icon$")
+    public void iShouldClickOnUploadDocumentIcon() {
+        assertTrue(actionContainer.homePageActions.uploadDocumentIcon());
+    }
+
+    @And("^I should select the more than five MB file for upload$")
+    public void iShouldSelectTheMoreThanFiveMBFileForUpload() {
+        assertTrue(actionContainer.homePageActions.morethan5MBFile());
+    }
+
+    @And("^I should verify the warning message for file size$")
+    public void iShouldVerifyTheWarningMessageForFileSize() {
+        assertTrue(actionContainer.homePageActions.uploadErrorMessageVerify());
+    }
+
+    @And("^I should select desired document by Browse icon$")
+    public void iShouldSelectDesiredDocumentByBrowseIcon() {
+        assertTrue(actionContainer.homePageActions.browsePath());
+    }
+
+    @And("^I should upload the document$")
+    public void iShouldUploadTheDocument() {
+        assertTrue(actionContainer.homePageActions.uploadIcon());
+    }
+
+    @And("^I should verify the successful upload message$")
+    public void iShouldVerifyTheSuccessfulUploadMessage() {
+        assertTrue(actionContainer.homePageActions.uploadVerificationMsg());
+    }
+
+    @And("^I should click on Search icon to search in a new tab$")
+    public void iShouldClickOnSearchIconToSearchInANewTab() {
+        assertTrue(actionContainer.homePageActions.clickSearchIcon());
+    }
+
+    @And("^I should click on view account to navigate into account screen$")
+    public void iShouldClickOnViewAccountToNavigateIntoAccountScreen() {
+        assertTrue(actionContainer.homePageActions.clickViewAccount());
+    }
+
+    @And("^I should verify all the headers in the search window$")
+    public void iShouldVerifyAllTheHeadersInTheSearchWindow() {
+        assertTrue(actionContainer.homePageActions.verifyHeadersInSearch());
     }
 }

@@ -64,6 +64,12 @@ public class HomePageUI {
     @FindBy(how = How.XPATH, using = "//span[text()=' Forgot Password?']")
     protected WebElement linkForgetPassword;
 
+    @FindBy(how = How.XPATH, using = "//span[text()=' Forgot Username?']")
+    protected WebElement linkForgetUsername;
+
+    @FindBy(how = How.XPATH, using = "//p[contains(text(),'contact your administrator')]")
+    protected WebElement msgForgetUsername;
+
     @FindBy(how = How.XPATH, using = "//input[@id='emailAddress']")
     protected WebElement txtBoxEmailAddress;
 
@@ -93,6 +99,12 @@ public class HomePageUI {
 
     @FindBy(how = How.XPATH, using = "//li[contains(@class,'ui-autocomplete-list-item')]")
     protected List<WebElement> dropdownSuggestion;
+
+    @FindBy(how = How.XPATH, using = "//span[contains(@class,'fa-search')]")
+    protected WebElement searchIcon;
+
+    @FindBy(how = How.XPATH, using = "//a[text()='View Account']")
+    protected WebElement viewAccountLink;
 
     @FindBy(how = How.XPATH, using = "//span[@class='font-weight-bold']")
     protected WebElement FullNameInAccount;
@@ -303,5 +315,100 @@ public class HomePageUI {
 
     @FindBy(how = How.XPATH, using = "//a[contains(text(),'iverifypro.consova.com')]")
     protected WebElement activationLink;
+
+    @FindBy(how = How.XPATH, using = "//span[contains(@class,'manage_user_icon')]")
+    protected WebElement manageUserIcon;
+
+    @FindBy(how = How.XPATH, using = "//button[text()='Add User']")
+    protected WebElement addUserButton;
+
+    @FindBy(how = How.XPATH, using = "//input[@formcontrolname='FirstName']")
+    protected WebElement txtBoxFirstName;
+
+    @FindBy(how = How.XPATH, using = "//input[@formcontrolname='LastName']")
+    protected WebElement txtBoxLastName;
+
+    @FindBy(how = How.XPATH, using = "//input[@formcontrolname='UserName']")
+    protected WebElement txtBoxEmail;
+
+    @FindBy(how = How.XPATH, using = "//select[@formcontrolname='UserRoles']")
+    protected WebElement dropdownRoles;
+
+    @FindBy(how = How.XPATH, using = "//select[@formcontrolname='UserRoles']//option")
+    protected List<WebElement> listRoles;
+
+    @FindBy(how = How.XPATH, using = "//p-multiselect[@formcontrolname='UserSubClients']")
+    protected WebElement dropdownSubClient;
+
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'ui-chkbox-box')]")
+    protected List<WebElement> listOfCheckboxes;
+
+    @FindBy(how = How.XPATH, using = "//button[text()='Register User']")
+    protected WebElement registerUserButton;
+
+    @FindBy(how = How.ID, using = "sidebarCollapse")
+    protected WebElement collapseIconInMenubar;
+
+    @FindBy(how = How.XPATH, using = "//span[text()='Dashboard']")
+    protected WebElement dashboardIconWithName;
+
+    @FindBy(how = How.XPATH, using = "//span[text()='Admin Ticket']")
+    protected WebElement adminTicketIconWithName;
+
+    @FindBy(how = How.XPATH, using = "//span[text()='Reports']")
+    protected WebElement reportIconWithName;
+
+    @FindBy(how = How.XPATH, using = "//span[text()='Manage User']")
+    protected WebElement manageUserIconWithName;
+
+    @FindBy(how = How.XPATH, using = "//span[text()='Privacy Policy']")
+    protected WebElement privacyPolicyIconWithName;
+
+    @FindBy(how = How.XPATH, using = "//span[text()='Logout']")
+    protected WebElement logoutIconWithName;
+
+    @FindBy(how = How.XPATH, using = "//span[contains(@class,'dashboard_icon')]")
+    protected WebElement dashboardIcon;
+
+    @FindBy(how = How.XPATH, using = "//span[contains(@class,'admin_ticket_icon')]")
+    protected WebElement adminTicketIcon;
+
+    @FindBy(how = How.XPATH, using = "//span[contains(@class,'privacy_policy_icon')]")
+    protected WebElement privacyPolicyIcon;
+
+    @FindBy(how = How.XPATH, using = "//input[@type='file']")
+    protected WebElement browsePath;
+    protected String filename = "BirthCertificate.jpg";
+
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Invalid file size')]")
+    protected WebElement uploadErrorMessageVerify;
+    protected String Highmbfilename = "6MBFile.pdf";
+
+    @FindBy(how = How.XPATH, using = "//button[text()='Upload']")
+    protected WebElement uploadIcon;
+
+    @FindBy(how = How.XPATH, using = "//button[text()='Upload Documents']")
+    protected WebElement uploadDocumentIcon;
+
+    @FindBy(how = How.XPATH, using = "//div[text()='Document uploaded successfully']")
+    protected WebElement uploadVerificationMsg;
+
+    @FindBy(how = How.XPATH, using = "//th[text()='Consova PIN ']")
+    protected WebElement consovaPINInSearch;
+
+    @FindBy(how = How.XPATH, using = "//th[text()='Employee Id ']")
+    protected WebElement employeeIdInSearch;
+
+    @FindBy(how = How.XPATH, using = "//th[text()='SSN ']")
+    protected WebElement ssnInSearch;
+
+    @FindBy(how = How.XPATH, using = "//th[text()='Employee Name ']")
+    protected WebElement employeeNameInSearch;
+
+    @FindBy(how = How.XPATH, using = "//th[text()='Employee Date of Birth ']")
+    protected WebElement dOBInSearch;
+
+    @FindBy(how = How.XPATH, using = "//td[@class='ng-star-inserted']")
+    protected WebElement filteredData;
 
 }
