@@ -323,7 +323,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean verifyFullNameInAccount() {
         boolean isVerified = false;
-        Sync.Delay(7000);
+        Sync.Delay(10000);
         if (FullNameInAccount.isDisplayed()) {
             isVerified = true;
         }
@@ -1095,7 +1095,7 @@ public class HomePageActions extends HomePageUI {
 
     public boolean verifyHeadersInSearch(){
         boolean isVerified=false;
-        Sync.Delay(5000);
+        Sync.Delay(10000);
         if(consovaPINInSearch.isDisplayed()){
             if(employeeIdInSearch.isDisplayed()){
                 if(ssnInSearch.isDisplayed()){

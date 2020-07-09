@@ -208,25 +208,25 @@ public class HomePageUI {
     @FindBy(how = How.XPATH, using = "//button[text()='Admin Ticket']")
     protected WebElement btnAdminTicket;
 
-    @FindBy(how = How.XPATH, using = "//select[@formcontrolname='adminTicketType']")
+    @FindBy(how = How.XPATH, using = "//label[text()='Select Ticket Reason']")
     protected WebElement btnTicketReason;
 
-    @FindBy(how = How.XPATH, using = "//option[text()='Employee audit Inquiry']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Employee audit Inquiry']")
     protected WebElement firstTicketReason;
 
-    @FindBy(how = How.XPATH, using = "//option[text()='Request call recording']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Request call recording']")
     protected WebElement secondTicketReason;
 
-    @FindBy(how = How.XPATH, using = "//option[text()='Update employee contact information']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Update employee contact information']")
     protected WebElement thirdTicketReason;
 
-    @FindBy(how = How.XPATH, using = "//option[text()='Update demographic information']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Update demographic information']")
     protected WebElement fourthTicketReason;
 
-    @FindBy(how = How.XPATH, using = "//select[@formcontrolname='dependentAudit']")
+    @FindBy(how = How.XPATH, using = "//label[text()='Select Audit']")
     protected WebElement auditsInAdminTicket;
 
-    @FindBy(how = How.XPATH, using = "//select[@formcontrolname='dependentAudit']//option")
+    @FindBy(how = How.XPATH, using = "//li[@role='option']")
     protected List<WebElement> listAuditsInAdminTicket;
 
     @FindBy(how = How.XPATH, using = "//button[text()='Submit']")
